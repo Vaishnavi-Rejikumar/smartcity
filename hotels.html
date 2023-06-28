@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Restaurants</title>
+    <style>
+        .jumbotron {
+            background-image: url('images.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(195, 195, 178);
+            text-align: center;
+        }
+
+        .card {
+            margin-bottom: 20px;
+             background-color:rgb(175, 174, 172);
+        }
+        .vertical-navbar {
+            position: fixed;
+            top: 200px;
+            left: 0;
+            width: 200px;
+            background-color: #a9b1b8;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" style="background-color: black;">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Home</a>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1 class="display-3" style="font-weight: bold; font-style: italic; color: white;">RESTAURANTS</h1>
+    </div>
+    <div class="vertical-navbar">
+        <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="veg" id="vegCheckbox">
+            <label class="form-check-label" for="vegCheckbox">
+                Vegetarian
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="nonveg" id="nonvegCheckbox">
+            <label class="form-check-label" for="nonvegCheckbox">
+                Non-Vegetarian
+            </label>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="anandabhavan.png" class="card-img-top" alt="Restaurant 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Ananda Bhavan</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant1')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">Veg</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat the above card for other restaurants -->
+            
+            <!-- Example of another restaurant card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="aryaas.jpg" class="card-img-top" alt="Restaurant 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Aryaas</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant2')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">Veg</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="sharavanabhavan.jpg" class="card-img-top" alt="Restaurant 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Saravana Bhavan Pure Veg</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant3')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">veg</button>
+                    </div>
+                </div>
+            </div>
+        
+           <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <img src="alibaba.png" class="card-img-top" alt="Restaurant 4">
+                <div class="card-body">
+                    <h5 class="card-title">Alibaba and 41 dishes</h5>
+                    <button class="btn btn-primary" onclick="openMap('restaurant4')">View on Map</button>
+                    <button class="btn btn-secondary filter-btn">Non-Veg</button>
+                </div>
+            </div>
+            </div>
+ 
+           <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <img src="tharavadu.png" class="card-img-top" alt="Restaurant 5">
+                <div class="card-body">
+                    <h5 class="card-title">Tharavadu restaurant and bakers</h5>
+                    <button class="btn btn-primary" onclick="openMap('restaurant5')">View on Map</button>
+                    <button class="btn btn-secondary filter-btn">Non-Veg</button>
+                </div>
+            </div>
+           </div>
+           <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <img src="orange .png" class="card-img-top" alt="Restaurant 6">
+                <div class="card-body">
+                    <h5 class="card-title">Orange Family Restaurant A/C</h5>
+                    <button class="btn btn-primary" onclick="openMap('restaurant6')">View on Map</button>
+                    <button class="btn btn-secondary filter-btn">Non-Veg</button>
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function openMap(restaurant) {
+            // Replace the URL below with the appropriate map URL for your desired location
+            var mapUrl = '';
+
+            // Add cases for other restaurants
+            switch (restaurant) {
+                case 'restaurant1':
+                    mapUrl = 'https://www.google.com/maps/place/Hotel+Ananda+Bhavan/@10.1921198,76.3828855,17z/data=!3m1!4b1!4m6!3m5!1s0x3b08065e165645ef:0x4f92ebe75f5cbfbd!8m2!3d10.1921198!4d76.3877564!16s%2Fg%2F126064lt5?entry=ttu';
+                    break;
+                case 'restaurant2':
+                    mapUrl = 'https://www.google.com/maps/place/Hotel+Aryaas/@10.185127,76.3754812,17z/data=!3m1!4b1!4m6!3m5!1s0x3b08066f5a928945:0x45a5fb461b7f3823!8m2!3d10.185127!4d76.3803521!16s%2Fg%2F11f0wxs8z7?entry=ttu';
+                    break;
+                case 'restaurant3':
+                    mapUrl = 'https://www.google.com/maps/place/Saravana+Bhavan+Pure+Veg./@10.1607505,76.3587751,17z/data=!3m1!4b1!4m6!3m5!1s0x3b080587eea80439:0x2bfeb62837cd55dc!8m2!3d10.1607505!4d76.36135!16s%2Fg%2F11rj3lcj8z?entry=ttu';
+                    break;
+                case 'restaurant4':
+                    mapUrl = 'https://www.google.com/maps/place/Alibaba+%26+41+Dishes+n+Bab+Arabia,+Angamaly/@10.1888404,76.3813174,17z/data=!3m1!4b1!4m6!3m5!1s0x3b08072ecece9225:0x6786316b0612e65e!8m2!3d10.1888404!4d76.3838923!16s%2Fg%2F11n0bk5z5h?entry=ttu';
+                    break;
+                case 'restaurant5':
+                    mapUrl = 'https://www.google.com/maps/place/Tharavadu+restaurant+and+bakers/@10.2302784,76.4045077,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0807223f8c5587:0xc88566ab6e75d6d9!8m2!3d10.2302784!4d76.4070826!16s%2Fg%2F11j5d3jjtx?entry=ttu';
+                    break;
+                case 'restaurant6':
+                    mapUrl = 'https://www.google.com/maps/place/Orange+Family+Restaurant+A%2FC/@10.1952497,76.383192,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0806606d33b683:0x5811afec6cbb974e!8m2!3d10.1952497!4d76.3857669!16s%2Fg%2F11f0kvchc4?entry=ttu';
+                    break;
+                default:
+                    // Handle unknown locations or show an error message
+                    alert('Location not found');
+                    return;
+            }
+
+            window.open(mapUrl, '_blank');
+        }
+
+        $(document).ready(function () {
+            $('.filter-btn').click(function () {
+                $(this).toggleClass('btn-primary').toggleClass('btn-secondary');
+            });
+        });
+    </script>
+</body>
+
+</html>

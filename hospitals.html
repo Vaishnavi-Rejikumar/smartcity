@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>HOSPITALS</title>
+    <style>
+        .jumbotron {
+            background-image: url('hospital3.jpeg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(195, 195, 178);
+            text-align: center;
+        }
+
+        .card {
+            margin-bottom: 20px;
+             background-color:rgb(175, 174, 172);
+        }
+        .vertical-navbar {
+            position: fixed;
+            top: 200px;
+            left: 0;
+            width: 200px;
+            background-color: #a9b1b8;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" style="background-color: black;">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Home</a>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1 class="display-3" style="font-weight: bold; font-style: italic; color: white;">HOSPITALS</h1>
+    </div>
+    <div class="vertical-navbar">
+        <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="veg" id="vegCheckbox">
+            <label class="form-check-label" for="vegCheckbox">
+                GOVERNMENT
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="nonveg" id="nonvegCheckbox">
+            <label class="form-check-label" for="nonvegCheckbox">
+                NON-GOVERNMENT
+            </label>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="magj.jpg" class="card-img-top" alt="Restaurant 1">
+                    <div class="card-body">
+                        <h5 class="card-title">MAGJ Hospital</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant1')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">non-govt</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat the above card for other restaurants -->
+            
+            <!-- Example of another restaurant card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="GOVT-THALLUK.jpg" class="card-img-top" alt="Restaurant 2">
+                    <div class="card-body">
+                        <h5 class="card-title">GOVT Taluk</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant2')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">govt</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="kg.jpeg.jpg" class="card-img-top" alt="Restaurant 3">
+                    <div class="card-body">
+                        <h5 class="card-title">KG Hospital</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant3')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">non-govt</button>
+                    </div>
+                </div>
+            </div>
+        
+           <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <img src="health center.jpeg.jpg" class="card-img-top" alt="Restaurant 4">
+                <div class="card-body">
+                    <h5 class="card-title">Primary Health Center</h5>
+                    <button class="btn btn-primary" onclick="openMap('restaurant4')">View on Map</button>
+                    <button class="btn btn-secondary filter-btn">govt</button>
+                </div>
+            </div>
+            </div>
+ 
+           <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <img src="Apollo.jpeg.jpg" class="card-img-top" alt="Restaurant 5">
+                <div class="card-body">
+                    <h5 class="card-title">Apollo Adulx Hospital</h5>
+                    <button class="btn btn-primary" onclick="openMap('restaurant5')">View on Map</button>
+                    <button class="btn btn-secondary filter-btn">non-govt</button>
+                </div>
+            </div>
+           </div>
+           <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <img src="alphonsa.jpeg.jpg" class="card-img-top" alt="Restaurant 6">
+                <div class="card-body">
+                    <h5 class="card-title">Alphonsa Hospital</h5>
+                    <button class="btn btn-primary" onclick="openMap('restaurant6')">View on Map</button>
+                    <button class="btn btn-secondary filter-btn">non-govt</button>
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function openMap(restaurant) {
+            // Replace the URL below with the appropriate map URL for your desired location
+            var mapUrl = '';
+
+            // Add cases for other restaurants
+            switch (restaurant) {
+                case 'restaurant1':
+                    mapUrl = 'https://www.google.com/maps/place/MAGJ+Hospital,+Mookkannoor,+Angamaly/@10.2205615,76.4109822,17z/data=!3m1!4b1!4m6!3m5!1s0x3b080721c88ae3fb:0xe4528a43d4364960!8m2!3d10.2205562!4d76.4135571!16s%2Fg%2F1tfmg7db?entry=ttu';
+                    break;
+                case 'restaurant2':
+                    mapUrl = 'https://www.google.com/maps/place/Angamaly+Municipality+Taluk+Hospital/@10.1961482,76.3823353,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0806f555a5a8db:0xa578abc5a78cbced!8m2!3d10.196143!4d76.3872062!16s%2Fg%2F11by_k1fnj?entry=ttu';
+                    break;
+                case 'restaurant3':
+                    mapUrl = 'https://www.google.com/maps/place/KG+Hospital/@10.1978747,76.3814864,17z/data=!3m1!4b1!4m6!3m5!1s0x3b08068a588f4e53:0xe74a7e7f2c1446c1!8m2!3d10.1978694!4d76.3840613!16s%2Fg%2F1tdx742d?entry=ttu';
+                    break;
+                case 'restaurant4':
+                    mapUrl = 'https://www.google.com/maps/place/Primary+Health+Centre/@10.1676392,76.3503107,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0805e42b3792d9:0xc6c900acd0289626!8m2!3d10.167634!4d76.3551816!16s%2Fg%2F1w97sv49?entry=ttu';
+                    break;
+                case 'restaurant5':
+                    mapUrl = 'https://www.google.com/maps/place/Apollo+Adlux+Hospital/@10.239687,76.3699181,17z/data=!3m1!4b1!4m6!3m5!1s0x3b080725823ffa3f:0x5c9ff49849b69126!8m2!3d10.2396817!4d76.372493!16s%2Fg%2F11fhvdh__w?entry=ttu';
+                    break;
+                case 'restaurant6':
+                    mapUrl = 'https://www.google.com/maps/place/Alphonsa+Hospital/@10.226572,76.3807781,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0806b9a8c8be85:0x81289d82c818353f!8m2!3d10.2265667!4d76.383353!16s%2Fg%2F1tj720gn?entry=ttu';
+                    break;
+                default:
+                    // Handle unknown locations or show an error message
+                    alert('Location not found');
+                    return;
+            }
+
+            window.open(mapUrl, '_blank');
+        }
+
+        $(document).ready(function () {
+            $('.filter-btn').click(function () {
+                $(this).toggleClass('btn-primary').toggleClass('btn-secondary');
+            });
+        });
+    </script>
+</body>
+
+</html>
