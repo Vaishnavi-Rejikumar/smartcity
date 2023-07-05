@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title >Transportation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
+   
     .navbar-brand.logo {
       padding-top: 0;
     }
@@ -20,9 +21,14 @@
     }
     
     body {
-        background-image: url('https://thumbs.dreamstime.com/b/highway-transportation-cars-truck-57448862.jpg'); background-repeat: no-repeat; background-size: cover;
+        background-image: url('transport.webp'); background-repeat: no-repeat; background-size: cover;
     }
-  
+    .jumbotron {
+  background-image: url(images/transport.webp);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
   </style>
 </head>
 <body>
@@ -32,9 +38,9 @@
         <a class="navbar-brand" href="#">
           <ul class="navbar-nav">
           <li class="nav-item">
-          <img src="logo.png" alt="logo" style="width:40px;"></li>
+          <img src="images/logo.png" alt="logo" style="width:40px;"></li>
           <li class="nav-item">
-          <p style="color: green; width: auto;"> THANAL</p>
+          <p style="color: green; width: auto;"> <b>THANAL</b></p>
         </li>
         
       </ul>
@@ -43,43 +49,9 @@
        
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="home.html">HOME</a>
+                <a class="nav-link" href="login.html">HOME</a>
               </li>  
-              <li class="nav-item">
-                <li class="nav-item dropdown">
-                  
-                  <a class="nav-link dropdown-toggle" style="color: #3c6afc" href="#" id="navbardrop" data-toggle="dropdown" >
-                    
-                   BUS STOP
-                  </a>
-                  <div class="dropdown-menu">
-                    
-                    <a class="dropdown-item" href="http://www.onefivenine.com/india/Listing/Town/busstops/Ernakulam/Angamali">ANGAMALY BUS STOP </a>
-        
-                    
-                  </div>
-                </li>
-              <li class="nav-item">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" style="color: #3c6afc" href="#" id="navbardrop" data-toggle="dropdown">
-                    RAILWAY STATION
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Angamaly_railway_station">ANGAMALY RAILWAY STATION</a>
-                    
-                  </div>
-                </li>
-              <li class="nav-item"
-              href="#">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" style="color: #3c6afc" href="#" id="navbardrop" data-toggle="dropdown">
-                    AUTO STAND
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="https://www.justdial.com/Ernakulam/Auto-Rickshaw-Services-in-Angamaly/nct-10939429">autostand</a>
-                    
-                  </div>
-                </li>
+              
             </ul>
         <!-- Links -->
         
@@ -88,13 +60,41 @@
 
 
 
-  <div class="jumbotron jumbotron-fluid" style="background-image: url(https://thumbs.dreamstime.com/b/highway-transportation-cars-truck-57448862.jpg)" style="max-width: 1000%;">
-    <center>
-
-      <h1 style="color: rgb(240, 244, 255); size: 50cm;"> TRANSPORTATION</h1> 
-    </center>
-    <div class="bg"></div>
-
+  <!-- <div class="jumbotron jumbotron-fluid" style="background-image: url(images/transport.webp)" style="max-width: 100%;">
+    <div class="bg"></div> -->
+    <div class="container text-center">
+      <h1 style="color: rgb(78, 80, 11); font-size: 50px;">TRANSPORTATION</h1>
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">BUSES</h3>
+              <p class="card-text">Discover convenient and reliable public transportation options in our city.</p>
+              <a href="http://www.onefivenine.com/india/Listing/Town/busstops/Ernakulam/Angamali" class="btn btn-primary btn-lg">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">AUTO</h3>
+              <p class="card-text">Find auto services for a hassle-free and cost-effective commute.</p>
+              <a href="https://www.justdial.com/Ernakulam/Auto-Rickshaw-Services-in-Angamaly/nct-10939429" class="btn btn-primary btn-lg">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">RAILWAY</h3>
+              <p class="card-text">Experience the Joy of Train Travel: Comfort, Convenience, and Adventure Await!</p>
+              <a href="https://en.wikipedia.org/wiki/Angamaly_railway_station" class="btn btn-primary btn-lg">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
       
            

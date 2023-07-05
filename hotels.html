@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Restaurants</title>
@@ -24,8 +24,9 @@
 
         .card {
             margin-bottom: 20px;
-             background-color:rgb(175, 174, 172);
+            background-color: rgb(175, 174, 172);
         }
+
         .vertical-navbar {
             position: fixed;
             top: 200px;
@@ -41,7 +42,7 @@
 <body>
     <nav class="navbar" style="background-color: black;">
         <div class="container">
-            <a class="navbar-brand" href="home.html">Home</a>
+            <a class="navbar-brand" href="login.html">Home</a>
         </div>
     </nav>
     <div class="jumbotron">
@@ -64,7 +65,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card" data-type="veg">
                     <img src="anandabhavan.png" class="card-img-top" alt="Restaurant 1">
                     <div class="card-body">
                         <h5 class="card-title">Hotel Ananda Bhavan</h5>
@@ -74,10 +75,10 @@
                 </div>
             </div>
             <!-- Repeat the above card for other restaurants -->
-            
+
             <!-- Example of another restaurant card -->
             <div class="col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card" data-type="veg">
                     <img src="aryaas.jpg" class="card-img-top" alt="Restaurant 2">
                     <div class="card-body">
                         <h5 class="card-title">Hotel Aryaas</h5>
@@ -87,7 +88,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card" data-type="veg">
                     <img src="sharavanabhavan.jpg" class="card-img-top" alt="Restaurant 3">
                     <div class="card-body">
                         <h5 class="card-title">Saravana Bhavan Pure Veg</h5>
@@ -96,38 +97,38 @@
                     </div>
                 </div>
             </div>
-        
-           <div class="col-md-6 col-lg-4">
-            <div class="card">
-                <img src="alibaba.png" class="card-img-top" alt="Restaurant 4">
-                <div class="card-body">
-                    <h5 class="card-title">Alibaba and 41 dishes</h5>
-                    <button class="btn btn-primary" onclick="openMap('restaurant4')">View on Map</button>
-                    <button class="btn btn-secondary filter-btn">Non-Veg</button>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card" data-type="nonveg">
+                    <img src="alibaba.png" class="card-img-top" alt="Restaurant 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Alibaba and 41 dishes</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant4')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">Non-Veg</button>
+                    </div>
                 </div>
             </div>
-            </div>
- 
-           <div class="col-md-6 col-lg-4">
-            <div class="card">
-                <img src="tharavadu.png" class="card-img-top" alt="Restaurant 5">
-                <div class="card-body">
-                    <h5 class="card-title">Tharavadu restaurant and bakers</h5>
-                    <button class="btn btn-primary" onclick="openMap('restaurant5')">View on Map</button>
-                    <button class="btn btn-secondary filter-btn">Non-Veg</button>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card" data-type="nonveg">
+                    <img src="tharavadu.png" class="card-img-top" alt="Restaurant 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Tharavadu restaurant and bakers</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant5')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">Non-Veg</button>
+                    </div>
                 </div>
             </div>
-           </div>
-           <div class="col-md-6 col-lg-4">
-            <div class="card">
-                <img src="orange .png" class="card-img-top" alt="Restaurant 6">
-                <div class="card-body">
-                    <h5 class="card-title">Orange Family Restaurant A/C</h5>
-                    <button class="btn btn-primary" onclick="openMap('restaurant6')">View on Map</button>
-                    <button class="btn btn-secondary filter-btn">Non-Veg</button>
+            <div class="col-md-6 col-lg-4">
+                <div class="card" data-type="nonveg">
+                    <img src="orange .png" class="card-img-top" alt="Restaurant 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Orange Family Restaurant A/C</h5>
+                        <button class="btn btn-primary" onclick="openMap('restaurant6')">View on Map</button>
+                        <button class="btn btn-secondary filter-btn">Non-Veg</button>
+                    </div>
                 </div>
             </div>
-           </div>
         </div>
     </div>
 
@@ -165,10 +166,25 @@
 
             window.open(mapUrl, '_blank');
         }
-
+    </script>
+    <script>
         $(document).ready(function () {
-            $('.filter-btn').click(function () {
-                $(this).toggleClass('btn-primary').toggleClass('btn-secondary');
+            $('.form-check').click(function () {
+                var vegChecked = $('#vegCheckbox').is(':checked');
+                var nonvegChecked = $('#nonvegCheckbox').is(':checked');
+
+                // Show all cards by default
+                $('.card').show();
+
+                // If only vegetarian checkbox is checked, hide non-veg cards
+                if (vegChecked && !nonvegChecked) {
+                    $('.card[data-type="nonveg"]').hide();
+                }
+
+                // If only non-vegetarian checkbox is checked, hide veg cards
+                if (nonvegChecked && !vegChecked) {
+                    $('.card[data-type="veg"]').hide();
+                }
             });
         });
     </script>
