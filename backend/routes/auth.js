@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const User = require('../model/User');
+const Comment = require('../model/Comment');
 const {registerValidate,loginValidate} = require('../validate');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -48,13 +49,26 @@ router.post('/login',async (req,res)=>{
         return res.status(400).send('invalid password');
     }
     //token
-    const token = jwt.sign({_id:user._id}, "SuperSecret");
-    res.header('auth-token', token);
+    
 
     res.send('Log in success!!');
 
 });
 
+router.post('/comment',async (req, res) =>{
+    const comment =  new Comment({
+    name: req.body.name,
+    email: req.body.email,
+    message : req.body.message
+});
+
+try{
+    const savedComment = await comment.save();
+    res.send({comment:comment._id});
+}catch(err){
+    res.status(400).send(err);
+}
+});
 
 
 

@@ -37,6 +37,11 @@
             text-align: center;
         }
     </style>
+    <script type="text/javascript">
+        function navigateToRestaurant() {
+            window.location.href = 'restaurant.html';
+        }
+    </script>
 </head>
 
 <body>
@@ -67,11 +72,14 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card" data-type="nonveg">
                     <img src="magj.jpg" class="card-img-top" alt="Restaurant 1">
+                    
                     <div class="card-body">
                         <h5 class="card-title">MAGJ Hospital</h5>
-                        <button class="btn btn-primary" onclick="openMap('restaurant1')">View on Map</button>
+                        <button class="btn btn-primary" onclick="navigateToRestaurant()">View on Map</button>
                         <button class="btn btn-secondary filter-btn">non-govt</button>
                     </div>
+                    
+                    
                 </div>
             </div>
             <!-- Repeat the above card for other restaurants -->
@@ -131,8 +139,9 @@
            </div>
         </div>
     </div>
-
+    <div id="myMap" style="width: 100%; height: 400px;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script>
         function openMap(restaurant) {
             // Replace the URL below with the appropriate map URL for your desired location
@@ -141,7 +150,19 @@
             // Add cases for other restaurants
             switch (restaurant) {
                 case 'restaurant1':
-                    mapUrl = 'https://www.google.com/maps/place/MAGJ+Hospital,+Mookkannoor,+Angamaly/@10.2205615,76.4109822,17z/data=!3m1!4b1!4m6!3m5!1s0x3b080721c88ae3fb:0xe4528a43d4364960!8m2!3d10.2205562!4d76.4135571!16s%2Fg%2F1tfmg7db?entry=ttu';
+                function loadMapScenario() {
+            var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                credentials: 'AmhMfBZLCSDiPKsfakqFoNOIQAO2ot6WHmRfJOOByGBtg5zNzKwf6IN7zTl7DH2y'
+            });
+
+            // Add a marker at a specific location
+            var center = new Microsoft.Maps.Location(47.6062, -122.3321);
+            var marker = new Microsoft.Maps.Pushpin(center);
+            map.entities.push(marker);
+        }
+
+        loadMapScenario();
+                    //mapUrl = 'https://www.google.com/maps/place/MAGJ+Hospital,+Mookkannoor,+Angamaly/@10.2205615,76.4109822,17z/data=!3m1!4b1!4m6!3m5!1s0x3b080721c88ae3fb:0xe4528a43d4364960!8m2!3d10.2205562!4d76.4135571!16s%2Fg%2F1tfmg7db?entry=ttu';
                     break;
                 case 'restaurant2':
                     mapUrl = 'https://www.google.com/maps/place/Angamaly+Municipality+Taluk+Hospital/@10.1961482,76.3823353,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0806f555a5a8db:0xa578abc5a78cbced!8m2!3d10.196143!4d76.3872062!16s%2Fg%2F11by_k1fnj?entry=ttu';

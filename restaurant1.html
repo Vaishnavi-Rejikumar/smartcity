@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bing Maps Example</title>
+    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=AmhMfBZLCSDiPKsfakqFoNOIQAO2ot6WHmRfJOOByGBtg5zNzKwf6IN7zTl7DH2y"></script>
+</head>
+<body>
+    <div id="myMap" style="width: 100%; height: 400px;"></div>
+
+    
+</body>
+<script type="text/javascript">
+    function loadMapScenario() {
+        var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+            credentials: 'AmhMfBZLCSDiPKsfakqFoNOIQAO2ot6WHmRfJOOByGBtg5zNzKwf6IN7zTl7DH2y'
+        });
+
+        // Add a marker at a specific location
+        var center = new Microsoft.Maps.Location(10.2205615,76.4109822);
+        var marker = new Microsoft.Maps.Pushpin(center);
+        map.entities.push(marker);
+    }
+
+    loadMapScenario();
+</script>
+</html>

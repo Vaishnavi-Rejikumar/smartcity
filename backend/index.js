@@ -4,7 +4,6 @@ const app = express();
 const authRoute = require('./routes/auth');
 const dotenv = require('dotenv');
 const postRoute = require('./post');
-const authRoute1 = require('./routes/comm');
 const connectDB = require('./config/db');
 dotenv.config({path:'./config/config.env'});
 

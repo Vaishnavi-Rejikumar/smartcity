@@ -36,8 +36,7 @@
           <h2 class="mb-4"> Contact Us </h2>  
           <form  
             class="contact-form d-flex flex-column align-items-center"  
-            action="#"  
-            method="POST">  
+            onsubmit="submitForm(event)">  
             <div class="form-group w-75">  
               <input type="name" class="form-control"  
                 placeholder="Enter Name"  
@@ -58,7 +57,7 @@
   
             <div class="form-group w-75">  
               <textarea  class="form-control"  
-                type="text" placeholder="Message" rows="7" name="name" required id="message"> Write Your Message here ...................</textarea>  
+                type="text" placeholder="Message" rows="7" name="name" required id="message"></textarea>  
             </div>  
             <button type="submit" class="btn btn-submit btn-info w-75"> Submit </button>  
           </form>  
@@ -82,14 +81,14 @@
     
             // Create the AJAX request
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://localhost:3000/api/user/contact', true);
+            xhr.open('POST', 'http://localhost:3000/api/user/comment', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
     
             // Handle the response
             xhr.onload = function() {
                 if (xhr.status === 200) {
                     console.log('Request successful');
-                    window.open('http://127.0.0.1:5500/home.html')
+                    window.open('http://127.0.0.1:5500/smart-angamaly/login.html')
                 } else {
                     console.log('Request failed');
                     console.log(xhr)
